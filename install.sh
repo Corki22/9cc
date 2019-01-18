@@ -15,5 +15,5 @@ for f in .??*; do
 done
 
 mkdir -p .vim/colors
-cp lucario.vim ~/.vim/colors
+cp .vim/colors/lucario.vim ~/.vim/colors
 
