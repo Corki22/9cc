@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #set -u
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 DOT_DIRECTORY="${HOME}/dotfiles"
 
@@ -16,4 +17,4 @@ done
 
 mkdir -p .vim/colors
 cp .vim/colors/lucario.vim ~/.vim/colors
-
+vim +PluginInstall +qall
