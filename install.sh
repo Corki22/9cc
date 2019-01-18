@@ -5,7 +5,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 DOT_DIRECTORY="${HOME}/dotfiles"
 
-cd $THIS_DIR
 git submodule init
 git submodule update
 
