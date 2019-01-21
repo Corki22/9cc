@@ -9,6 +9,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup'
 Plugin 'davidcrooloose/nerdtree'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
 "Plugin 'ascenator/L9', {'name': 'newL9'}
 
 call vundle#end()            
@@ -30,3 +33,6 @@ set smartcase
 set showmatch           
 set matchtime=2 
 let mapleader = "\<Space>"
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd FileType python setlocal completeopt-=preview
+let g:jedi#popup_select_first = 0
