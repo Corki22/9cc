@@ -17,3 +17,4 @@ done
 mkdir -p .vim/colors
 cp .vim/colors/lucario.vim ~/.vim/colors
 vim +PluginInstall +qall
+pip install jedi
