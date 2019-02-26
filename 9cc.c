@@ -14,3 +14,7 @@ int main(int argc, char **argv){
 	printf(" ret\n");
 	return 0;
 }
+<<<<<<< HEAD
+=======
+//test
+>>>>>>> 39deb06a07cc717799f50e71668b67e6e9305d81
