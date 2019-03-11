@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Add	9cc.c	/^Node *Add(){$/;"	f
+Consume	9cc.c	/^int Consume(int ty){$/;"	f
+Gen	9cc.c	/^void Gen(Node *node){$/;"	f
+NewNode	9cc.c	/^Node *NewNode(int ty, Node* lhs, Node* rhs){$/;"	f
+NewNodeNum	9cc.c	/^Node *NewNodeNum(int val){$/;"	f
+Node	9cc.c	/^typedef struct Node{$/;"	s	file:
+Node	9cc.c	/^}Node;$/;"	t	typeref:struct:Node	file:
+Num	9cc.c	/^Node *Num(){$/;"	f
+TK_EOF	9cc.c	/^	TK_EOF,$/;"	e	enum:__anon1	file:
+TK_NUM	9cc.c	/^	TK_NUM=256,$/;"	e	enum:__anon1	file:
+Token	9cc.c	/^}Token;$/;"	t	typeref:struct:__anon2	file:
+Tokenize	9cc.c	/^void Tokenize(char *p){$/;"	f
+error	9cc.c	/^void error(int i){$/;"	f
+input	9cc.c	/^	char *input;$/;"	m	struct:__anon2	file:
+lhs	9cc.c	/^	struct Node *lhs;$/;"	m	struct:Node	typeref:struct:Node::Node	file:
+main	9cc.c	/^int main(int argc, char **argv){$/;"	f
+main	tmp.s	/^main:$/;"	l
+pos	9cc.c	/^int pos=0;$/;"	v
+rhs	9cc.c	/^	struct Node *rhs;$/;"	m	struct:Node	typeref:struct:Node::Node	file:
+tokens	9cc.c	/^Token tokens[100];$/;"	v
+try	test.sh	/^try(){$/;"	f
+ty	9cc.c	/^	int ty;$/;"	m	struct:Node	file:
+ty	9cc.c	/^	int ty;$/;"	m	struct:__anon2	file:
+val	9cc.c	/^	int val;$/;"	m	struct:Node	file:
+val	9cc.c	/^	int val;$/;"	m	struct:__anon2	file:

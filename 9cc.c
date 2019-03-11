@@ -3,6 +3,7 @@
 #include<string.h>
 #include<ctype.h>
 
+
 enum{
 	TK_NUM=256,
 	TK_EOF,
@@ -31,6 +32,7 @@ int Consume(int ty){
 	return 1;
 }
 
+Node* Add();
 
 void Tokenize(char *p){
 	int i=0;
@@ -40,7 +42,7 @@ void Tokenize(char *p){
 				continue;
 		}	
 
-		if(*p=='+'|| *p=='-'){
+		if(*p=='+'|| *p=='-' || *p=='*' || *p=='/' || *p=='(' || *p==')'){
 			tokens[i].ty=*p;
 			tokens[i].input=p;
 			i++;
@@ -88,16 +90,40 @@ Node *NewNodeNum(int val){
 Node *Num(){
 	if(tokens[pos].ty==TK_NUM)
 		return NewNodeNum(tokens[pos++].val);
-	printf("erro???????:j:wqr\n");
+}
+
+Node *Term(){
+	if(Consume('(')){
+		Node *node=Add();
+		if(!Consume(')'))
+			printf("there is a no counter ')': %s",tokens[pos].input);
+		return node;
+	}
+	
+	if(tokens[pos].ty==TK_NUM)
+		return NewNodeNum(tokens[pos++].val);
+	printf(" neithre num or '()':%s",tokens[pos].input);
+}
+Node *Mul(){
+	Node *node=Term();
+	for(;;){
+		if(Consume('*'))
+			node=NewNode('*',node,Term());
+		else if(Consume('/'))
+			node=NewNode('/',node,Term());
+		else
+			return node;
+	}
 }
 
 Node *Add(){
-	Node *node=Num();
+	//Creating first node. It must be num
+	Node *node=Mul();
 	while(1){
 		if(Consume('+'))
-			node=NewNode('+',node,Num());
+			node=NewNode('+',node,Mul());
 		else if (Consume('-'))
-			node=NewNode('-',node,Num());
+			node=NewNode('-',node,Mul());
 		else
 		return node;
 	}
