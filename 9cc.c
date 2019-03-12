@@ -88,8 +88,10 @@ Node *NewNodeNum(int val){
 }
 
 Node *Num(){
-	if(tokens[pos].ty==TK_NUM)
+	if(tokens[pos].ty==TK_NUM){
 		return NewNodeNum(tokens[pos++].val);
+	}
+	error(pos);
 }
 
 Node *Term(){
@@ -99,11 +101,12 @@ Node *Term(){
 			printf("there is a no counter ')': %s",tokens[pos].input);
 		return node;
 	}
-	
-	if(tokens[pos].ty==TK_NUM)
+	if(tokens[pos].ty==TK_NUM){
 		return NewNodeNum(tokens[pos++].val);
-	printf(" neithre num or '()':%s",tokens[pos].input);
+	}
+	error(pos);
 }
+
 Node *Mul(){
 	Node *node=Term();
 	for(;;){
